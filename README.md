@@ -1,194 +1,183 @@
-# Ronald's - E-commerce de Moda de Lujo
+# 👗 Ronald's — Luxury Fashion E-commerce
 
-Un e-commerce completo y funcional de ropa y accesorios de moda, desarrollado con las últimas tecnologías web.
+A complete, fully functional fashion and accessories e-commerce platform, built with modern web technologies.
 
-![Ronald's E-commerce](https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1200&q=80)
+## 📖 Description
 
-## Descripción
+Ronald's is an online luxury fashion store offering a premium shopping experience. It includes a product catalog, shopping cart, a simulated payment checkout flow, a full authentication system, and a user dashboard.
 
-Ronald's es una tienda online de moda de lujo que ofrece una experiencia de compra premium. Incluye catálogo de productos, carrito de compras, proceso de checkout con pasarela de pagos simulada, sistema de autenticación completo y panel de usuario.
+## ✨ Features
 
-## Características
+### 🛍️ Product Catalog
+- **6 main categories**: Women's Clothing, Men's Clothing, Bags, Shoes, Accessories, Sport
+- **Detailed subcategories**: Dresses, Blouses, Pants, Skirts, Coats, Jackets, etc.
+- **48+ products** with high-quality images
+- **Price filters**
+- **Sorting** by price, newest, and featured items
 
-### Catálogo de Productos
-- **6 Categorías principales**: Ropa Mujer, Ropa Hombre, Bolsos, Zapatos, Accesorios, Sport
-- **Subcategorías detalladas**: Vestidos, Blusas, Pantalones, Faldas, Abrigos, Chaquetas, etc.
-- **+48 productos** con imágenes de alta calidad
-- **Filtros de precio** funcionales
-- **Ordenamiento** por precio, novedades y destacados
+### 🔐 Authentication System
+- User registration with password validation
+- Login
+- Password recovery
+- Session persistence via localStorage
 
-### Sistema de Autenticación
-- Registro de usuarios con validación de contraseña
-- Inicio de sesión
-- Recuperación de contraseña
-- Persistencia de sesión con localStorage
+### 🛒 Shopping Cart
+- Add/remove products
+- Size and color selection
+- Quantity adjustment
+- Automatic subtotal calculation
+- Free shipping indicator (+€100)
 
-### Carrito de Compras
-- Añadir/eliminar productos
-- Selección de talla y color
-- Modificación de cantidades
-- Cálculo automático de subtotales
-- Indicador de envío gratuito (+100€)
+### 💳 Checkout Process
+- Shipping address form
+- Multiple shipping methods (Standard, Express, Overnight)
+- Payment gateway with card validation
+- Order confirmation with tracking number
 
-### Proceso de Checkout
-- Formulario de dirección de envío
-- Múltiples métodos de envío (Estándar, Express, Nocturno)
-- Pasarela de pagos con validación de tarjeta
-- Confirmación de pedido con número de seguimiento
+### 👤 User Dashboard
+- Editable profile
+- Order history
+- Saved address management
 
-### Panel de Usuario
-- Perfil editable
-- Historial de pedidos
-- Gestión de direcciones guardadas
+### 🎨 Design & UX
+- Fully responsive (mobile, tablet, desktop)
+- Smooth CSS animations
+- Header with dropdown mega menu
+- Auto-playing hero slider
+- Scroll-triggered animated sections
 
-### Diseño y UX
-- Diseño responsive (móvil, tablet, desktop)
-- Animaciones suaves con CSS
-- Header con mega menú desplegable
-- Hero slider con auto-play
-- Secciones animadas al scroll
+## 🧰 Tech Stack
 
-## Tecnologías Utilizadas
+- **Framework**: Next.js 16 (App Router)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS v4
+- **UI Components**: shadcn/ui
+- **Global State**: Zustand
+- **Icons**: Lucide React
+- **Images**: Next/Image with Unsplash
 
-- **Framework**: [Next.js 16](https://nextjs.org/) (App Router)
-- **Lenguaje**: [TypeScript](https://www.typescriptlang.org/)
-- **Estilos**: [Tailwind CSS v4](https://tailwindcss.com/)
-- **Componentes UI**: [shadcn/ui](https://ui.shadcn.com/)
-- **Estado Global**: [Zustand](https://zustand-demo.pmnd.rs/)
-- **Iconos**: [Lucide React](https://lucide.dev/)
-- **Imágenes**: [Next/Image](https://nextjs.org/docs/app/api-reference/components/image) con Unsplash
+## 🚀 Installation
 
-## Instalación
+### Prerequisites
 
-### Prerrequisitos
+- Node.js 18.17 or higher
+- pnpm (recommended) or npm
 
-- Node.js 18.17 o superior
-- pnpm (recomendado) o npm
+### Setup Steps
 
-### Pasos de Instalación
-
-1. **Clonar el repositorio**
+1. **Clone the repository**
    ```bash
-   git clone https://github.com/tu-usuario/ronalds-ecommerce.git
+   git clone <your-repo-url>
    cd ronalds-ecommerce
    ```
 
-2. **Instalar dependencias**
+2. **Install dependencies**
    ```bash
    pnpm install
-   # o con npm
+   # or with npm
    npm install
    ```
 
-3. **Iniciar el servidor de desarrollo**
+3. **Start the development server**
    ```bash
    pnpm dev
-   # o con npm
+   # or with npm
    npm run dev
    ```
 
-4. **Abrir en el navegador**
+4. **Open in your browser**
    ```
    http://localhost:3000
    ```
 
-## Estructura del Proyecto
+## 📁 Project Structure
 
 ```
 ronalds-ecommerce/
-├── app/                          # Páginas y rutas (App Router)
-│   ├── page.tsx                  # Página principal
-│   ├── layout.tsx                # Layout raíz
-│   ├── globals.css               # Estilos globales
-│   ├── login/                    # Página de inicio de sesión
-│   ├── registro/                 # Página de registro
-│   ├── recuperar-password/       # Recuperación de contraseña
-│   ├── categoria/                # Páginas de categorías
-│   │   ├── [slug]/               # Categoría dinámica
-│   │   └── [slug]/[subcategory]/ # Subcategoría dinámica
-│   ├── producto/[id]/            # Página de producto
-│   ├── coleccion/[slug]/         # Página de colección
-│   ├── colecciones/              # Todas las colecciones
-│   ├── carrito/                  # Carrito de compras
-│   ├── checkout/                 # Proceso de pago
-│   └── cuenta/                   # Panel de usuario
-│       └── pedidos/              # Historial de pedidos
-├── components/                   # Componentes reutilizables
-│   ├── ui/                       # Componentes shadcn/ui
-│   ├── header.tsx                # Navegación principal
-│   ├── footer.tsx                # Pie de página
-│   └── product-card.tsx          # Tarjeta de producto
-├── lib/                          # Utilidades y datos
-│   ├── data.ts                   # Datos de productos y categorías
-│   ├── store.ts                  # Stores de Zustand
-│   ├── types.ts                  # Tipos TypeScript
-│   └── utils.ts                  # Funciones de utilidad
-└── public/                       # Archivos estáticos
-    └── favicon.ico               # Favicon con tridente
+├── app/                          # Pages and routes (App Router)
+│   ├── page.tsx                  # Home page
+│   ├── layout.tsx                # Root layout
+│   ├── globals.css               # Global styles
+│   ├── login/                    # Login page
+│   ├── registro/                 # Registration page
+│   ├── recuperar-password/       # Password recovery
+│   ├── categoria/                # Category pages
+│   │   ├── [slug]/               # Dynamic category
+│   │   └── [slug]/[subcategory]/ # Dynamic subcategory
+│   ├── producto/[id]/            # Product page
+│   ├── coleccion/[slug]/         # Collection page
+│   ├── colecciones/              # All collections
+│   ├── carrito/                  # Shopping cart
+│   ├── checkout/                 # Payment process
+│   └── cuenta/                   # User dashboard
+│       └── pedidos/              # Order history
+├── components/                   # Reusable components
+│   ├── ui/                       # shadcn/ui components
+│   ├── header.tsx                # Main navigation
+│   ├── footer.tsx                # Footer
+│   └── product-card.tsx          # Product card
+├── lib/                          # Utilities and data
+│   ├── data.ts                   # Product and category data
+│   ├── store.ts                  # Zustand stores
+│   ├── types.ts                  # TypeScript types
+│   └── utils.ts                  # Utility functions
+└── public/                       # Static assets
+    └── favicon.ico                # Trident favicon
 ```
 
-## Scripts Disponibles
+## 📜 Available Scripts
 
 ```bash
-# Desarrollo
-pnpm dev          # Inicia servidor de desarrollo
+# Development
+pnpm dev          # Start the development server
 
-# Producción
-pnpm build        # Compila para producción
-pnpm start        # Inicia servidor de producción
+# Production
+pnpm build        # Build for production
+pnpm start        # Start the production server
 
 # Linting
-pnpm lint         # Ejecuta ESLint
+pnpm lint         # Run ESLint
 ```
 
-## Configuración
+## ⚙️ Configuration
 
-El proyecto utiliza las siguientes configuraciones:
+The project uses the following configuration files:
 
-- **next.config.mjs**: Configuración de Next.js con imágenes sin optimizar para desarrollo
-- **tailwind.config.ts**: Configuración de Tailwind CSS con tema personalizado
-- **tsconfig.json**: Configuración de TypeScript con paths alias
+- **next.config.mjs**: Next.js config with unoptimized images for development
+- **tailwind.config.ts**: Tailwind CSS config with a custom theme
+- **tsconfig.json**: TypeScript config with path aliases
 
-## Notas de Desarrollo
+## 📝 Development Notes
 
-- **Sin base de datos**: Todos los datos se almacenan en memoria y localStorage
-- **Pasarela de pagos simulada**: No procesa pagos reales, solo simula el flujo
-- **Autenticación local**: Los usuarios se guardan en localStorage (no usar en producción)
-- **Imágenes de Unsplash**: Todas las imágenes provienen de Unsplash
+- **No database**: All data is stored in memory and localStorage
+- **Simulated payment gateway**: Doesn't process real payments, only simulates the flow
+- **Local authentication**: Users are saved in localStorage (not production-ready)
+- **Unsplash images**: All images are sourced from Unsplash
 
-## Próximas Mejoras
+## 🛣️ Roadmap
 
-- [ ] Integración con base de datos real (PostgreSQL/MongoDB)
-- [ ] Pasarela de pagos real (Stripe)
-- [ ] Sistema de autenticación con NextAuth.js
-- [ ] Búsqueda de productos con Algolia
-- [ ] Internacionalización (i18n)
-- [ ] Tests unitarios y e2e
+- [ ] Integration with a real database (PostgreSQL/MongoDB)
+- [ ] Real payment gateway (Stripe)
+- [ ] Authentication with NextAuth.js
+- [ ] Product search with Algolia
+- [ ] Internationalization (i18n)
+- [ ] Unit and e2e tests
 
-## Contribuir
+## 🤝 Contributing
 
-Las contribuciones son bienvenidas. Por favor:
+Contributions are welcome! Please:
 
-1. Haz fork del repositorio
-2. Crea una rama para tu feature (`git checkout -b feature/nueva-funcionalidad`)
-3. Commit tus cambios (`git commit -m 'Añade nueva funcionalidad'`)
-4. Push a la rama (`git push origin feature/nueva-funcionalidad`)
-5. Abre un Pull Request
+1. Fork the repository
+2. Create a branch for your feature (`git checkout -b feature/new-feature`)
+3. Commit your changes (`git commit -m 'Add new feature'`)
+4. Push to the branch (`git push origin feature/new-feature`)
+5. Open a Pull Request
 
-## Créditos
+## 🙌 Credits
 
-**Desarrollado por:**
-- **Ronald Cubides** - Desarrollo y diseño
-- **v0 by Vercel** - Asistente de desarrollo AI
-
-**Tecnologías:**
-- [Vercel](https://vercel.com) - Plataforma de despliegue
-- [v0.dev](https://v0.dev) - Asistente de desarrollo AI
-
-## Licencia
-
-Este proyecto está bajo la Licencia MIT. Ver el archivo [LICENSE](LICENSE) para más detalles.
+**Developed by:**
+- **Ronald Cubides and v0**
 
 ---
 
-Hecho con mucho cafe y codigo por Ronald Cubides con la ayuda de v0 by Vercel
+☕ Made with lots of coffee and code by Ronald Cubides
